@@ -22,6 +22,15 @@ public abstract class HotelMangement {
         PhoneNumber = phoneNumber;
     }
 
+    public String getID() {
+        return ID;
+    }
 
+    public String getName() {
+        return Name;
+    }
 
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
 }
