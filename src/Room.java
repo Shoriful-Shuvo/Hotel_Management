@@ -4,6 +4,8 @@ public abstract class Room {
     private double Price;
     private boolean AvailableRoom;
 
+    public Room() {}
+
     public Room (int RoomNumber,int Floor,double Price,boolean AvailableRoom) {
          this.RoomNumber = RoomNumber;
          this.Floor = Floor;
@@ -30,7 +32,6 @@ public abstract class Room {
     public void setAvailableRoom (boolean AvailableRoom) {
         this.AvailableRoom = AvailableRoom;
     }
-
     public abstract void roomType();
 
     public void ShowRoomInformation() {
