@@ -1,4 +1,5 @@
 public abstract class Room {
+    private String RoomName;
     private int RoomNumber;
     private int Floor;
     private double Price;
@@ -6,11 +7,15 @@ public abstract class Room {
 
     public Room() {}
 
-    public Room (int RoomNumber,int Floor,double Price,boolean AvailableRoom) {
+    public Room (String RoomName,int RoomNumber,int Floor,double Price,boolean AvailableRoom) {
+         this.RoomName = RoomName;
          this.RoomNumber = RoomNumber;
          this.Floor = Floor;
          this.Price = Price;
          this.AvailableRoom = AvailableRoom;
+    }
+    public String getRoomName() {
+        return RoomName;
     }
     public int getRoomNumber() {
         return RoomNumber;
@@ -25,6 +30,9 @@ public abstract class Room {
     public boolean getAvailableRoom () {
         return AvailableRoom;
     }
+    public void setRoomName(String RoomName) {
+        this.RoomName = RoomName;
+    }
     public void setPrice(double Price) {
         this.Price = Price;
 
@@ -35,6 +43,7 @@ public abstract class Room {
     public abstract void roomType();
 
     public void ShowRoomInformation() {
+        System.out.println("Room Name: " +RoomName);
         System.out.println("Room Number: " +RoomNumber);
         System.out.println("Floor: " +Floor);
         System.out.println("Price: " +Price);
