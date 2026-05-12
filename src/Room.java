@@ -4,7 +4,7 @@ public abstract class Room {
     private double Price;
 
     public Room (int RoomNumber,int Floor,double Price) {
-         this.RoomNumber =RoomNumber;
+         this.RoomNumber = RoomNumber;
          this.Floor = Floor;
          this.Price = Price;
     }
