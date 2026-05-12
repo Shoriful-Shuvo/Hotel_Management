@@ -1,8 +1,8 @@
 public class Manager extends Employee {
 
 
-    Manager(int ID,String Name,int PhoneNumber){
-        super(ID,Name,PhoneNumber);
+    Manager(int ID,String Name,int PhoneNumber,String employeeRole){
+        super(ID,Name,PhoneNumber,employeeRole);
     }
 
     private  String EmployeeWorkSummary;
@@ -14,6 +14,12 @@ public class Manager extends Employee {
     }
     public String  WorkSummary(){
         return EmployeeWorkSummary;
+    }
+    public void addEmployee(){
+
+    }
+    public void removeEmployee(){
+
     }
 
 

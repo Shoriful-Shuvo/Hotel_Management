@@ -2,11 +2,13 @@ import java.util.Scanner;
 
 abstract class Employee  {
 
+    private  String employeeRole;
     private int ID;
     private String Name;
     private int PhoneNumber;
 
-    public Employee (int ID,String Name,int PhoneNumber){
+
+    public Employee (int ID,String Name,int PhoneNumber,String employeeRole){
 
     }
 
