@@ -8,5 +8,10 @@ public abstract class Room {
          this.Floor = Floor;
          this.Price = Price;
     }
+    public int getRoomNumber() {
+        return RoomNumber;
+    }
+
+
 
 }
