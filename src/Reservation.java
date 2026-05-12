@@ -67,11 +67,4 @@ public class Reservation {
         System.out.println("Reservation Information : ");
     }
 }
-public class OnlineReservation extends Reservation{
 
-
-
-}
-public class OfflineReservation extends Reservation{
-
-}
