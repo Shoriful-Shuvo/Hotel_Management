@@ -10,6 +10,17 @@ public abstract class HotelMangement {
     }
 
     public abstract String getSummary();
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
 
 
 
