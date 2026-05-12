@@ -30,6 +30,14 @@ public abstract class Room {
     public void setAvailableRoom (boolean AvailableRoom) {
         this.AvailableRoom = AvailableRoom;
     }
+    public void RoomBooking () {
+        if(!AvailableRoom) {
+            System.out.println("Room is already Booked");
+            return;
+        }
+        AvailableRoom = false;
+        System.out.println("Now room is successfully booked");
+    }
 
 
 
