@@ -12,6 +12,10 @@ public abstract class Room {
         return RoomNumber;
     }
 
+    public int getFloor() {
+        return Floor;
+    }
+
 
 
 }
