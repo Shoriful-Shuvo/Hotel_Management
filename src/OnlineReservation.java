@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 public class OnlineReservation extends Reservation{
     private String PaymentMethod;
     private String TransactionID;
@@ -10,7 +11,24 @@ public class OnlineReservation extends Reservation{
         this.PhoneNumber=PhoneNumber;
     }
 
+    public String getPaymentMethod() {
+        return PaymentMethod;
+    }
 
+    public String getTransactionID() {
+        return TransactionID;
+    }
 
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
 
+    @Override
+    public void DisplayInformation() {
+        super.DisplayInformation();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+    }
 }
