@@ -20,6 +20,16 @@ public abstract class Room {
     public double getPrice() {
         return Price;
     }
+    public boolean getAvailableRoom () {
+        return AvailableRoom;
+    }
+    public void setPrice(double Price) {
+        this.Price = Price;
+
+    }
+    public void setAvailableRoom (boolean AvailableRoom) {
+        this.AvailableRoom = AvailableRoom;
+    }
 
 
 
