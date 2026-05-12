@@ -70,6 +70,7 @@ public class Reservation {
 public class OnlineReservation extends Reservation{
 
 
+
 }
 public class OfflineReservation extends Reservation{
 
