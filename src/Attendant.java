@@ -14,5 +14,8 @@ public class Attendant extends Employee{
     public String getEmployeeWorkSummary() {
         return EmployeeWorkSummary;
     }
+    public void Welcome(){
+
+    }
 
 }
