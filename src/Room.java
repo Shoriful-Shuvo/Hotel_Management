@@ -1,2 +1,3 @@
-public class Room {
+public abstract class Room {
+
 }
