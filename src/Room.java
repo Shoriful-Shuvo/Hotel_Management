@@ -31,8 +31,12 @@ public abstract class Room {
         this.AvailableRoom = AvailableRoom;
     }
 
+    public abstract void roomType();
 
-
-
-
+    public void ShowRoomInformation() {
+        System.out.println("Room Number: " +RoomNumber);
+        System.out.println("Floor: " +Floor);
+        System.out.println("Price: " +Price);
+        System.out.println("AvailableRoom: "+AvailableRoom);
+    }
 }
