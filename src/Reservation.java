@@ -6,5 +6,6 @@ public class Reservation {
     private Room room;
     private double price;
     private String status;
+    public Reservation(){}
 
 }
