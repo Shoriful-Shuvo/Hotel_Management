@@ -65,6 +65,12 @@ public class Reservation {
     }
     public void DisplayInformation(){
         System.out.println("Reservation Information : ");
+        System.out.println("Guest     : ");
+        System.out.println("Room      : ");
+        System.out.println("Arrival   : ");
+        System.out.println("departure : ");
+        System.out.println("status    : ");
+        System.out.println("Price     : ");
     }
 }
 
