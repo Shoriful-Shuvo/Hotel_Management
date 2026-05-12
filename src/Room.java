@@ -15,6 +15,10 @@ public abstract class Room {
     public int getFloor() {
         return Floor;
     }
+    public double getPrice() {
+        return Price;
+    }
+
 
 
 
