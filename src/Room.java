@@ -2,11 +2,13 @@ public abstract class Room {
     private int RoomNumber;
     private int Floor;
     private double Price;
+    private boolean AvailableRoom;
 
-    public Room (int RoomNumber,int Floor,double Price) {
+    public Room (int RoomNumber,int Floor,double Price,boolean AvailableRoom) {
          this.RoomNumber = RoomNumber;
          this.Floor = Floor;
          this.Price = Price;
+         this.AvailableRoom = AvailableRoom;
     }
     public int getRoomNumber() {
         return RoomNumber;
@@ -18,6 +20,7 @@ public abstract class Room {
     public double getPrice() {
         return Price;
     }
+
 
 
 
