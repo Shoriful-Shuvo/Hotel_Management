@@ -8,4 +8,5 @@ public class LuxuryRoom extends Room {
         this.FoolService = FoodService;
     }
 
+
 }
