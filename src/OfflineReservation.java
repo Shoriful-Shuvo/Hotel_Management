@@ -1,4 +1,11 @@
+import java.security.PublicKey;
+
 public class OfflineReservation extends Reservation{
+    private String DeskName;
+    private String EmployeeName;
+
+    public OfflineReservation()
+
 
 
 
