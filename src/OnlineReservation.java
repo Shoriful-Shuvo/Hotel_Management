@@ -13,6 +13,18 @@ public class OnlineReservation extends Reservation{
         this.PhoneNumber=PhoneNumber;
     }
 
+    public void setPaymentMethod(String paymentMethod) {
+        this.PaymentMethod = paymentMethod;
+    }
+
+    public void setTransactionID(String transactionID) {
+        this.TransactionID = transactionID;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.PhoneNumber = phoneNumber;
+    }
+
     public String getPaymentMethod() {
         return PaymentMethod;
     }
