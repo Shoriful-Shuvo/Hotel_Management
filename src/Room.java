@@ -10,7 +10,7 @@ public abstract class Room {
          this.roomNumber = roomNumber;
          this.floorLevel = floorLevel;
          this.costPerNight = costPerNight;
-         available = true;
+         this.available = available;
     }
     public String getRoomNumber() {
         return roomNumber;
