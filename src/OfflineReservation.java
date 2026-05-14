@@ -28,6 +28,8 @@ public class OfflineReservation extends Reservation{
         return EmployeeName;
     }
 
+
+
     @Override
     public void DisplayInformation() {
         super.DisplayInformation();

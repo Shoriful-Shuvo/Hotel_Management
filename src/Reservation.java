@@ -1,5 +1,5 @@
 import java.time.LocalDate;
-public class Reservation {
+public abstract class Reservation {
     private LocalDate arrivalDate;
     private LocalDate departureDate;
     private Guest guest;
