@@ -20,6 +20,18 @@ public class ReservationControl {
         }
     }
 
+public void DisplayReservationList(){
+        if (ReservationList.isEmpty()){
+            System.out.println("No Reservation Is Available!!");
+            return;
+        }
+        int count=1;
+        for (Reservation r : ReservationList){
+            System.out.println("***Reservation No. "+ count++ +" ::");
+            r.DisplayInformation();
+            System.out.println();
+        }
+}
 
 
 
