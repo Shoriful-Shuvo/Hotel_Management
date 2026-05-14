@@ -3,8 +3,8 @@ public class LuxuryRoom extends Room {
 
     public LuxuryRoom() {}
 
-    public LuxuryRoom(String RoomName,int RoomNumber,int Floor,double Price,boolean AvailableRoom,String FoodService) {
-        super(RoomName,RoomNumber,Floor,Price,AvailableRoom);
+    public LuxuryRoom(String RoomNumber,int floorLevel,double costPerNight,String FoodService) {
+        super(RoomNumber,floorLevel,costPerNight,true);
         this.FoolService = FoodService;
     }
 

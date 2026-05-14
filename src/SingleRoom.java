@@ -12,7 +12,7 @@ public class SingleRoom extends Room{
 
     @Override
     public String getRoomType() {
-        return "Single Room";
+        return "Single room";
     }
     @Override
     public int getMaxOccupancy() {
@@ -25,5 +25,4 @@ public class SingleRoom extends Room{
         System.out.println("Bed: "+hasSingleBed);
         System.out.println("Tv: "+hasTv);
     }
-
 }
