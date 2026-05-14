@@ -33,6 +33,15 @@ public abstract class Room {
 
     public abstract int getMaxOccupancy ();
 
+    public void reserveRoom() {
+        available = false;
+        System.out.println("Room Reserved");
+    }
+    public void cancelReservation() {
+        available = true;
+        System.out.println("Reservation Cancelled");
+    }
+
     public void ShowRoomInformation() {
         System.out.println("Room Number: " +roomNumber);
         System.out.println("Floor: " +floorLevel);
