@@ -38,5 +38,7 @@ public abstract class Room {
         System.out.println("Floor: " +floorLevel);
         System.out.println("Price: " +costPerNight);
         System.out.println("Available: "+available);
+        System.out.println("RoomType: "+getRoomType());
+        System.out.println("RoomCapacity: "+getMaxOccupancy());
     }
 }
