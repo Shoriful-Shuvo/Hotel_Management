@@ -16,7 +16,7 @@ public class Manager extends Employee {
     Manager(){
 
     }
-    @Override
+
     public void addEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
         setEmployeeName(employeeName);
         setEmployeeId(employeeId);
@@ -24,7 +24,7 @@ public class Manager extends Employee {
         setEmployeeRole(employeeRole);
 
     }
-    @Override
+
     public void removeEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
         if (employeeId == this.getEmployeeId() ){
             this.setEmployeeName("Null");
@@ -34,12 +34,12 @@ public class Manager extends Employee {
         }
     }
 
-    @Override
+
     public  void  UpdateEmployeeRole(String employeeRole){
         this.setEmployeeName(employeeRole);
     }
 
-    @Override
+
     public void UpdateEmployeeSalary(double employeeSalary) {
         this.setEmployeeSalary(employeeSalary);
     }
@@ -47,5 +47,9 @@ public class Manager extends Employee {
         System.out.println("Name : " + this.getEmployeeName() + "Role : " +getEmployeeRole()+ "Id : " +getEmployeeId() +"Salary : "+getEmployeeSalary() );
     }
 
+    @Override
+    public void Work(){
+        System.out.println("Managing the Hotel");
+    }
 
 }

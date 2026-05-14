@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 abstract class Employee  {
     private static int totalEmployee;
     {
@@ -65,9 +63,6 @@ abstract class Employee  {
     public void setEmployeeSalary(double employeeSalary) {
         this.employeeSalary = employeeSalary;
     }
-    public abstract void addEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole);
-    public abstract void removeEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole);
-    public abstract void UpdateEmployeeRole(String employeeRole);
-    public abstract void UpdateEmployeeSalary(double employeeSalary);
+    public abstract void Work();
 
 }
