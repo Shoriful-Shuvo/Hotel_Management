@@ -16,6 +16,30 @@ public class Reservation {
         this.price=price;
     }
 
+    public void setArrivalDate(LocalDate arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+
+    public void setDepartureDate(LocalDate departureDate) {
+        this.departureDate = departureDate;
+    }
+
+    public void setGuest(Guest guest) {
+        this.guest = guest;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public LocalDate getArrivalDate() {
         return arrivalDate;
     }
@@ -40,29 +64,6 @@ public class Reservation {
         return price;
     }
 
-    public void setArrivalDate(LocalDate arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-
-    public void setDepartureDate(LocalDate departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public void setGuest(Guest guest) {
-        this.guest = guest;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
     public void DisplayInformation(){
         System.out.println("Reservation Information : ");
         System.out.println("Guest     : ");
