@@ -20,7 +20,7 @@ public class ReservationControl {
         }
     }
 
-public void DisplayReservationList(){
+    public void DisplayReservationList(){
         if (ReservationList.isEmpty()){
             System.out.println("No Reservation Is Available!!");
             return;
@@ -32,6 +32,14 @@ public void DisplayReservationList(){
             System.out.println();
         }
 }
+
+    public void UpdateStatus(Reservation r, String status){
+        r.setStatus(status);
+        System.out.println("Status Updated To : "+status);
+    }
+
+
+
 
 
 
