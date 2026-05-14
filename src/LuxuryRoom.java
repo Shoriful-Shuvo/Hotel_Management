@@ -10,6 +10,20 @@ public class LuxuryRoom extends Room {
         this.bedType = bedType;
 
     }
+    @Override
+    public String getRoomType() {
+        return "Luxury";
+    }
+    @Override
+    public int getMaxOccupancy (){
+        return 2;
 
-
+    }
+    @Override
+    public void ShowRoomInformation() {
+        super.ShowRoomInformation();
+        System.out.println("Fridge: "+hasFridge);
+        System.out.println("SmartTv: "+hasSmartTv);
+        System.out.println("BedType: "+bedType);
+    }
 }
