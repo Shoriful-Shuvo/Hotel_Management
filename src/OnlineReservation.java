@@ -38,6 +38,11 @@ public class OnlineReservation extends Reservation{
     }
 
     @Override
+    public double CalculateTotalcost(){
+        return getPrice()*0.5 ;
+    }
+
+    @Override
     public void DisplayInformation() {
         super.DisplayInformation();
         System.out.println("");

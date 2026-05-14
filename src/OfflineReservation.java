@@ -29,6 +29,11 @@ public class OfflineReservation extends Reservation{
     }
 
     @Override
+    public double CalculateTotalcost(){
+        return getPrice();
+    }
+
+    @Override
     public void DisplayInformation() {
         super.DisplayInformation();
         System.out.println("");

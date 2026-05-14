@@ -16,6 +16,8 @@ public abstract class Reservation {
         this.price=price;
     }
 
+    public abstract double CalculateTotalcost();
+
     public void setArrivalDate(LocalDate arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
