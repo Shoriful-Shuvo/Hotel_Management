@@ -1,52 +1,42 @@
 public abstract class Room {
-    private String roomName;
-    private int roomNumber;
+    private String roomNumber;
     private int floorLevel;
-    private double cost;
-    private boolean availableRoom;
+    private double costPerNight;
+    private boolean available;
 
     public Room() {}
 
-    public Room (String roomName,int roomNumber,int floorLevel,double cost,boolean availableRoom) {
-         this.roomName = roomName;
+    public Room (String roomNumber,int floorLevel,double costPerNight,boolean available) {
          this.roomNumber = roomNumber;
          this.floorLevel = floorLevel;
-         this.cost= cost;
-         this.availableRoom = availableRoom;
+         this.costPerNight = costPerNight;
+         available = true;
     }
-    public String getRoomName() {
-        return roomName;
-    }
-    public int getRoomNumber() {
+    public String getRoomNumber() {
         return roomNumber;
     }
 
     public int getFloorLevel() {
         return floorLevel;
     }
-    public double getCost() {
-        return cost;
+    public double getCostPerNight() {
+        return costPerNight;
     }
-    public boolean getAvailableRoom () {
-        return availableRoom;
+    public boolean isAvailable () {
+        return available;
     }
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
-    public void setCost(double cost) {
-        this.cost = cost;
 
+    public void setAvailable (boolean available) {
+        this.available = available;
     }
-    public void setAvailableRoom (boolean availableRoom) {
-        this.availableRoom = availableRoom;
-    }
-    public abstract void roomType();
+    public abstract String getRoomType();
+
+    public abstract int getMaxOccupancy ();
 
     public void ShowRoomInformation() {
-        System.out.println("Room Name: " +roomName);
         System.out.println("Room Number: " +roomNumber);
         System.out.println("Floor: " +floorLevel);
-        System.out.println("Price: " +cost);
-        System.out.println("AvailableRoom: "+availableRoom);
+        System.out.println("Price: " +costPerNight);
+        System.out.println("Available: "+available);
     }
 }
