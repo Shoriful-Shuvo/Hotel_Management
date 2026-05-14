@@ -67,13 +67,13 @@ public abstract class Reservation {
     }
 
     public void DisplayInformation(){
-        System.out.println("Reservation Information : ");
-        System.out.println("Guest     : ");
-        System.out.println("Room      : ");
-        System.out.println("Arrival   : ");
-        System.out.println("departure : ");
-        System.out.println("status    : ");
-        System.out.println("Price     : ");
+        System.out.println("*****Reservation Information :  *****");
+        System.out.println("Guest Name       : ");
+        System.out.println("Room Number      : ");
+        System.out.println("ArrivalDate      : "+arrivalDate);
+        System.out.println("Departure Date   : "+departureDate);
+        System.out.println("Status           : "+status);
+        System.out.println("Price            : "+price);
     }
 }
 

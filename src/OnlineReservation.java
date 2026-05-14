@@ -45,9 +45,10 @@ public class OnlineReservation extends Reservation{
     @Override
     public void DisplayInformation() {
         super.DisplayInformation();
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        System.out.println("Reservation Type : Online Reservation");
+        System.out.println("Payment Method    : "+PaymentMethod);
+        System.out.println("Transaction ID    : "+TransactionID);
+        System.out.println("Phone NUmber      : "+PhoneNumber);
 
     }
 }
