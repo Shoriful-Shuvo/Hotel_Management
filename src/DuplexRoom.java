@@ -7,6 +7,19 @@ public class DuplexRoom extends Room{
        this.hasLivingArea = hasLivingArea;
        this.numberOfLevels = numberOfLevels;
     }
-
+    @Override
+    public String getRoomType() {
+        return "Duplex room";
+    }
+    @Override
+    public int getMaxOccupancy() {
+        return 3;
+    }
+    @Override
+    public void ShowRoomInformation (){
+        super.ShowRoomInformation();
+        System.out.println("Levels: "+numberOfLevels);
+        System.out.println("Living Area: "+hasLivingArea);
+    }
 
 }
