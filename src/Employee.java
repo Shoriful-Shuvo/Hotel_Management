@@ -1,43 +1,73 @@
 import java.util.Scanner;
 
 abstract class Employee  {
+    private static int totalEmployee;
+    {
+        totalEmployee++;
+    }
+   private String employeeName;
+   private  int  employeeId;
+   private  double employeeSalary;
+   private  String employeeRole;
 
-    private  String employeeRole;
-    private int ID;
-    private String Name;
-    private int PhoneNumber;
-
-
-    public Employee (int ID,String Name,int PhoneNumber,String employeeRole){
-
+    Employee(){
+        this("Null");
+    }
+    Employee(String employeeName){
+        this(employeeName, 0);
+    }
+    Employee(String employeeName, int  employeeId){
+        this(employeeName, employeeId,0.0);
     }
 
-    public abstract void  setWorkSummary( String EmployeeWorkSummary);
-
-
-    public void setID(int ID) {
-        this.ID = ID;
+   Employee(String employeeName,int  employeeId,double employeeSalary){
+       this(employeeName,employeeId,employeeSalary,"Employee");
+   }
+    Employee(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
+        this.employeeName =employeeName;
+        this.employeeId =employeeId;
+        this.employeeSalary =employeeSalary;
+        this.employeeRole =employeeRole;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        PhoneNumber = phoneNumber;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public int getID() {
-        return ID;
+    public static int getTotalEmployee() {
+        return totalEmployee;
     }
 
-    public String getName() {
-        return Name;
+    public String getEmployeeRole() {
+        return employeeRole;
     }
 
-    public int getPhoneNumber() {
-        return PhoneNumber;
+    public void setEmployeeRole(String employeeRole) {
+        this.employeeRole = employeeRole;
     }
 
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public double getEmployeeSalary() {
+        return employeeSalary;
+    }
+
+    public void setEmployeeSalary(double employeeSalary) {
+        this.employeeSalary = employeeSalary;
+    }
+    public abstract void addEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole);
+    public abstract void removeEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole);
+    public abstract void UpdateEmployeeRole(String employeeRole);
+    public abstract void UpdateEmployeeSalary(double employeeSalary);
 
 }
