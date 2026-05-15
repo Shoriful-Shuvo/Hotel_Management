@@ -20,8 +20,8 @@ public class LuxuryRoom extends Room {
 
     }
     @Override
-    public void ShowRoomInformation() {
-        super.ShowRoomInformation();
+    public void showRoomInformation() {
+        super.showRoomInformation();
         System.out.println("Fridge: "+hasFridge);
         System.out.println("SmartTv: "+hasSmartTv);
         System.out.println("BedType: "+bedType);

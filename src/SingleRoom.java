@@ -19,8 +19,8 @@ public class SingleRoom extends Room{
         return 1;
     }
     @Override
-    public void ShowRoomInformation() {
-        super.ShowRoomInformation();
+    public void showRoomInformation() {
+        super.showRoomInformation();
         System.out.println("Study Table: "+hasStudyTable);
         System.out.println("Bed: "+hasSingleBed);
         System.out.println("Tv: "+hasTv);

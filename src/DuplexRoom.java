@@ -16,8 +16,8 @@ public class DuplexRoom extends Room{
         return 3;
     }
     @Override
-    public void ShowRoomInformation (){
-        super.ShowRoomInformation();
+    public void showRoomInformation (){
+        super.showRoomInformation();
         System.out.println("Levels: "+numberOfLevels);
         System.out.println("Living Area: "+hasLivingArea);
     }

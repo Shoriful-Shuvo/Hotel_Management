@@ -35,14 +35,14 @@ public abstract class Room {
 
     public void reserveRoom() {
         available = false;
-        System.out.println("Room Reserved");
+        System.out.println("Room is successfully Reserved");
     }
     public void cancelReservation() {
         available = true;
-        System.out.println("Reservation Cancelled");
+        System.out.println("Reservation has been Cancelled");
     }
 
-    public void ShowRoomInformation() {
+    public void showRoomInformation() {
         System.out.println("Room Number: " +roomNumber);
         System.out.println("Floor: " +floorLevel);
         System.out.println("Price: " +costPerNight);
