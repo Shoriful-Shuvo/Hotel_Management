@@ -1,12 +1,42 @@
 public  class HotelManagement {
+    public static void show(Employee [] employees){
+        System.out.println();
+        System.out.println("Hotel Management Employee Numbers : "+Employee.getTotalEmployee());
+        System.out.println();
+        for (int i =0; i<8;i++){
+            if (i==0){
+                System.out.println("=========================================");
+                System.out.println();
+                System.out.println("              Employee List");
+                System.out.println();
+                System.out.println("=========================================");
+                System.out.println();
+            }
+            employees[i].ShowEmployeeDetails();
+            System.out.println();
+            System.out.println("====================");
+            System.out.println();
+        }
+
+
+    }
     public static void main(String[] args) {
-        Manager manage1 = new Manager("shuvo",202);
-        Manager manage2 = new Manager();
-        Manager manage3 = new Manager();
-        Manager manage4 = new Manager();
-        Manager manage5 = new Manager();
-        System.out.println(Employee.getTotalEmployee());
-        manage1.addEmployee("shoriful",110,500000,"ceo");
+        Employee [] employee = {new Manager()
+                ,new Receptionist()
+                ,new Receptionist()
+                ,new Attendant()
+                ,new Attendant()
+                ,new Porter()
+                ,new Porter()
+                ,new Porter()
+        };
+        HotelManagement.show(employee);
+          Manager manager = (Manager) employee[0];
+          //manager.addEmployee("Shoriful",202,500000,"CEO");
+
+          manager.removeEmployee(employee[1]);
+        HotelManagement.show(employee);
+
 
     }
 }

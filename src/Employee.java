@@ -8,6 +8,8 @@ abstract class Employee  {
    private  double employeeSalary;
    private  String employeeRole;
 
+    public abstract void ShowEmployeeDetails();
+
     Employee(){
         this("Null");
     }
@@ -27,6 +29,12 @@ abstract class Employee  {
         this.employeeSalary =employeeSalary;
         this.employeeRole =employeeRole;
     }
+//    public void addEmployees(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
+//        this.employeeName =employeeName;
+//        this.employeeId =employeeId;
+//        this.employeeSalary =employeeSalary;
+//        this.employeeRole =employeeRole;
+//    }
 
     public String getEmployeeName() {
         return employeeName;
@@ -50,6 +58,10 @@ abstract class Employee  {
 
     public int getEmployeeId() {
         return employeeId;
+    }
+
+    public static void setTotalEmployee(int totalEmployee) {
+        Employee.totalEmployee = totalEmployee;
     }
 
     public void setEmployeeId(int employeeId) {

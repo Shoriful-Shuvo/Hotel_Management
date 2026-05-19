@@ -1,10 +1,8 @@
 public class Manager extends Employee {
 
-    Manager(String employeeName,int  employeeId, double employeeSalary,String employeeRole){
-        super(employeeName,employeeId,employeeSalary,employeeRole);
-    }
     Manager(String employeeName,int  employeeId, double employeeSalary){
-        super(employeeName,employeeId,employeeSalary);
+        super(employeeName,employeeId,employeeSalary,"Manager");
+        //setTotalEmployee(getTotalEmployee()+1);
     }
 
     Manager(String employeeName,int  employeeId){
@@ -14,24 +12,16 @@ public class Manager extends Employee {
         super(employeeName);
     }
     Manager(){
-
+        setEmployeeRole("Manager");
     }
-
     public void addEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
-        setEmployeeName(employeeName);
-        setEmployeeId(employeeId);
-        setEmployeeSalary(employeeSalary);
-        setEmployeeRole(employeeRole);
+       //Employee employee =   addEmployees(employeeName,employeeId,employeeSalary,employeeRole);
+//        return this;
 
     }
 
-    public void removeEmployee(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
-        if (employeeId == this.getEmployeeId() ){
-            this.setEmployeeName("Null");
-            this.setEmployeeId(0);
-            this.setEmployeeSalary(0);
-            this.setEmployeeRole("Null");
-        }
+    public void removeEmployee(Employee  employee){
+        employee=null;
     }
 
 
@@ -43,13 +33,17 @@ public class Manager extends Employee {
     public void UpdateEmployeeSalary(double employeeSalary) {
         this.setEmployeeSalary(employeeSalary);
     }
+    @Override
     public void ShowEmployeeDetails(){
-        System.out.println("Name : " + this.getEmployeeName() + "Role : " +getEmployeeRole()+ "Id : " +getEmployeeId() +"Salary : "+getEmployeeSalary() );
+        System.out.println("Name : " + this.getEmployeeName() + "\nRole : " +getEmployeeRole()+ "\nId : " +getEmployeeId() +"\nSalary : "+getEmployeeSalary() );
+        Work();
     }
 
     @Override
     public void Work(){
         System.out.println("Managing the Hotel");
     }
+
+
 
 }

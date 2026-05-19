@@ -1,24 +1,25 @@
-//public class Porter extends Employee{
-//    private  String EmployeeWorkSummary;
-//
-//
-//    Porter(int ID,String Name,int PhoneNumber,String employeeRole){
-//        super(ID,Name,PhoneNumber,employeeRole);
-//    }
-//    @Override
-//    public void setWorkSummary( String  EmployeeWorkSummary){
-//        this.EmployeeWorkSummary = EmployeeWorkSummary;
-//
-//    }
-//    public String  WorkSummary(){
-//        return EmployeeWorkSummary;
-//    }
-//    public String laguageCarry(boolean answer){
-//        if (answer){
-//            return "Good Work.place it in the room";
-//        }
-//        else {
-//            return "Do it Quickly";
-//        }
-//    }
-//}
+public class Porter extends Employee {
+    Porter(String employeeName,int  employeeId, double employeeSalary){
+        super(employeeName,employeeId,employeeSalary,"Porter");
+    }
+
+    Porter(String employeeName,int  employeeId){
+        super(employeeName,employeeId);
+    }
+    Porter(String employeeName){
+        super(employeeName);
+    }
+    Porter(){
+        setEmployeeRole("Porter");
+    }
+
+    @Override
+    public void Work() {
+        System.out.println("pick up the Bag");
+    }
+    @Override
+    public void ShowEmployeeDetails(){
+        System.out.println("Name : " + this.getEmployeeName() + "\nRole : " +getEmployeeRole()+ "\nId : " +getEmployeeId() +"\nSalary : "+getEmployeeSalary() );
+        Work();
+    }
+}
