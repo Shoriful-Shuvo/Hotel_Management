@@ -6,7 +6,16 @@ public abstract class Room {
 
     public Room() {}
 
-    public Room (String roomNumber,int floorLevel,double costPerNight,boolean available) {
+    public Room (String roomNumber,int floorLevel,double costPerNight,boolean available) throws InvalidRoomException  {
+        if(roomNumber == null || roomNumber.trim().isEmpty()){
+            throw new IllegalArgumentException("Room number cannot be empty.");
+        }
+        if(floorLevel<0){
+            throw new IllegalArgumentException("Floor Level cannot be negative.");
+        }
+        if(costPerNight<0){
+            throw new IllegalArgumentException("Cost per night cannot be negative.");
+        }
          this.roomNumber = roomNumber;
          this.floorLevel = floorLevel;
          this.costPerNight = costPerNight;
@@ -34,11 +43,11 @@ public abstract class Room {
     public abstract int getMaxOccupancy ();
 
     public void reserveRoom() {
-        available = false;
+        this.available = false;
         System.out.println("Room is successfully Reserved");
     }
     public void cancelReservation() {
-        available = true;
+         this.available = true;
         System.out.println("Reservation has been Cancelled");
     }
 

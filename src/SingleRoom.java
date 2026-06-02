@@ -3,8 +3,12 @@ public class SingleRoom extends Room{
     private boolean hasSingleBed;
     private boolean hasTv;
 
-    public SingleRoom(String roomNumber,int floorLevel,double costPerNight,boolean hasStudyTable,boolean hasSingleBed,boolean hasTv) {
+    public SingleRoom(String roomNumber,int floorLevel,double costPerNight,boolean hasStudyTable,boolean hasSingleBed,boolean hasTv) throws InvalidRoomException  {
         super(roomNumber,floorLevel,costPerNight,true);
+
+        if(!hasSingleBed) {
+            throw new InvalidRoomException("Single Room must have a single bed.");
+        }
         this.hasStudyTable = hasStudyTable;
         this.hasSingleBed = hasSingleBed;
         this.hasTv = hasTv;
