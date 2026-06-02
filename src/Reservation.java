@@ -7,7 +7,15 @@ public abstract class Reservation {
     private String status;
     private double price;
     public Reservation(){}
-    public Reservation(LocalDate arrivalDate, LocalDate departureDate, Guest guest, Room room, String status, double price){
+    public Reservation(LocalDate arrivalDate, LocalDate departureDate, Guest guest, Room room, String status, double price)throws InvalidReservationException {
+        if(arrivalDate == null || departureDate == null){
+            throw new InvalidReservationException("Arrival and Departure dates cannot be empty.");
+        }
+
+        if(price <= 0){
+            throw new InvalidReservationException("Price must be Positive.");
+        }
+
         this.arrivalDate=arrivalDate;
         this.departureDate=departureDate;
         this.guest=guest;
