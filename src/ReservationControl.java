@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class ReservationControl {
     private ArrayList<Reservation> ReservationList;
 
-    public ReservationControl{
+    public ReservationControl(){
         ReservationList = new ArrayList<>();
     }
 
