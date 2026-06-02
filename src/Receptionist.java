@@ -21,6 +21,8 @@ public class Receptionist extends Employee{
         Guest guestOne = new Guest();
     }
     public void addGuest(String guestName) {
+        if (guestName == null || guestName.isBlank())
+            throw new IllegalArgumentException("Guest name cannot be empty.");
         Guest guestOne = new Guest(guestName);
     }
     public void addGuest(String guestName,int guesrNid){
@@ -45,6 +47,8 @@ public class Receptionist extends Employee{
     }
     // push 1
     public void SeeGuestDetails(Guest guest){
+        if (guest == null)
+            throw new IllegalArgumentException("Guest cannot be null.");
         System.out.println("Guest Name : " + guest.getGuestName() + "\nGuest Nid : " +guest.getGuesrNid()+"\nGuest Review : " +"\nGuest Review : " + guest.getGuestReview()+ "\nGuest Category : "+ guest.getGuestCategory()+"\nGuest In Room No :" + guest.getGuestInRoom());
     }
     @Override

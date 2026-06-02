@@ -41,6 +41,8 @@ abstract class Employee  {
     }
 
     public void setEmployeeName(String employeeName) {
+        if (employeeName == null )
+            throw new IllegalArgumentException("Employee name cannot be empty.");
         this.employeeName = employeeName;
     }
 
@@ -65,6 +67,8 @@ abstract class Employee  {
     }
 
     public void setEmployeeId(int employeeId) {
+        if (employeeId < 0)
+            throw new IllegalArgumentException("Employee ID cannot be negative.");
         this.employeeId = employeeId;
     }
 
@@ -73,8 +77,11 @@ abstract class Employee  {
     }
 
     public void setEmployeeSalary(double employeeSalary) {
+        if (employeeSalary < 0)
+            throw new IllegalArgumentException("Salary cannot be negative.");
         this.employeeSalary = employeeSalary;
     }
     public abstract void Work();
+
 
 }

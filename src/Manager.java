@@ -20,8 +20,12 @@ public class Manager extends Employee {
 
     }
 
-    public void removeEmployee(Employee  employee){
-        employee=null;
+    public void removeEmployee(Employee[] employees, int index){
+        if (employees == null)
+            throw new IllegalArgumentException("Employee array is null.");
+        if (index < 0 || index >= employees.length)
+            throw new ArrayIndexOutOfBoundsException("Invalid employee index: " + index);
+        employees[index]=null;
     }
 
 
