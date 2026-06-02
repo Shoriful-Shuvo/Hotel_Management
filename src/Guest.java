@@ -1,78 +1,72 @@
-public class Guest {
-    private static int totalGuest;
-    {
-        totalGuest++;
-    }
-    private int guesrNid;
+public abstract class Guest {
+    private int guestID;
     private String guestName;
-    private String guestCategory;
-    private String guestReview;
-    private int guestInRoom;
-    Guest (String guestName , int guesrNid,String guestReview,String guestCategory,int guestInRoom){
+    private long phoneNumber;
+    private int roomNumber;
+    private boolean checkedIn;
+
+    public Guest(int guestID, String guestName, long phoneNumber)
+            throws GuestException {
+
+        if (guestID <= 0)
+            throw new GuestException("Invalid Guest ID");
+
+        if (guestName == null || guestName.isEmpty())
+            throw new GuestException("Guest name cannot be empty");
+
+        this.guestID = guestID;
         this.guestName = guestName;
-        this.guesrNid  = guesrNid;
-        this.guestReview  = guestReview;
-        this.guestCategory  = guestCategory;
-        this.guestInRoom =guestInRoom;
-    }
-    Guest (String guestName , int guesrNid,String guestReview,String guestCategory){
-        this(guestName,guesrNid,guestReview,"Guest",0);
-    }
-    Guest (String guestName , int guesrNid,String guestReview){
-        this(guestName,guesrNid,guestReview,"Guest",0);
+        this.phoneNumber = phoneNumber;
+        this.checkedIn = false;
     }
 
-    Guest (String guestName , int guesrNid){
-        this(guestName,guesrNid,"5 Star","Guest",0);
-    }
-    Guest (String guestName ){
-        this(guestName,0,"5 Star","Guest",0);
-    }
-    Guest (){
-        this("Guest Name",0,"5 Star","Guest",0);
-    }
-
-    public static int getTotalGuest() {
-        return totalGuest;
-    }
-
-    public int getGuesrNid() {
-        return guesrNid;
-    }
-
-    public void setGuesrNid(int guesrNid) {
-        this.guesrNid = guesrNid;
+    public int getGuestID() {
+        return guestID;
     }
 
     public String getGuestName() {
         return guestName;
     }
 
-    public void setGuestName(String guestName) {
-        this.guestName = guestName;
+    public long getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public String getGuestCategory() {
-        return guestCategory;
+    public int getRoomNumber() {
+        return roomNumber;
     }
 
-    public void setGuestCategory(String guestCategory) {
-        this.guestCategory = guestCategory;
+    public boolean isCheckedIn() {
+        return checkedIn;
     }
 
-    public int getGuestInRoom() {
-        return guestInRoom;
+    public void assignRoom(int roomNumber) throws GuestException {
+        if (roomNumber <= 0)
+            throw new GuestException("Invalid room number");
+
+        this.roomNumber = roomNumber;
     }
 
-    public void setGuestInRoom(int guestInRoom) {
-        this.guestInRoom = guestInRoom;
+    public void checkIn() throws GuestException {
+        if (roomNumber == 0)
+            throw new GuestException("Room not assigned");
+
+        checkedIn = true;
     }
 
-    public String getGuestReview() {
-        return guestReview;
+    public void checkOut() throws GuestException {
+        if (!checkedIn)
+            throw new GuestException("Guest is not checked in");
+
+        checkedIn = false;
     }
 
-    public void setGuestReview(String guestReview) {
-        this.guestReview = guestReview;
+    public void showGuestInfo() {
+        System.out.println("ID: " + guestID);
+        System.out.println("Name: " + guestName);
+        System.out.println("Phone: " + phoneNumber);
+        System.out.println("Room: " + roomNumber);
     }
+
+    public abstract void rest();
 }
