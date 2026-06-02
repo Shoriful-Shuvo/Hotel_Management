@@ -55,8 +55,13 @@ public  class HotelManagement {
         // 4. Catch errors when a receptionist adds a guest
         Receptionist receptionist = (Receptionist) employee[2];
         try {
-            receptionist.addGuest("Bashir", 12345, "5 Star", "VIP", 201);
-        } catch (IllegalArgumentException e) {
+            receptionist.addVipGuest(201, "Bashir", 1700000001L, "Ali");
+
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println("Cannot add guest: " + e.getMessage());
+        }
+        catch (GuestException e) {
             System.out.println("Cannot add guest: " + e.getMessage());
         }
 

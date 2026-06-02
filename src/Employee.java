@@ -3,10 +3,10 @@ abstract class Employee  {
     {
         totalEmployee++;
     }
-   private String employeeName;
-   private  int  employeeId;
-   private  double employeeSalary;
-   private  String employeeRole;
+    private String employeeName;
+    private  int  employeeId;
+    private  double employeeSalary;
+    private  String employeeRole;
 
     public abstract void ShowEmployeeDetails();
 
@@ -20,9 +20,9 @@ abstract class Employee  {
         this(employeeName, employeeId,0.0);
     }
 
-   Employee(String employeeName,int  employeeId,double employeeSalary){
-       this(employeeName,employeeId,employeeSalary,"Employee");
-   }
+    Employee(String employeeName,int  employeeId,double employeeSalary){
+        this(employeeName,employeeId,employeeSalary,"Employee");
+    }
     Employee(String employeeName,int  employeeId,double employeeSalary,String employeeRole){
         this.employeeName =employeeName;
         this.employeeId =employeeId;

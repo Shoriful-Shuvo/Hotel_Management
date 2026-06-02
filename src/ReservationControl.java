@@ -34,7 +34,7 @@ public class ReservationControl {
             r.DisplayInformation();
             System.out.println();
         }
-}
+    }
 
     public void UpdateStatus(Reservation r, String status)throws InvalidStatusException{
         if(!(status.equalsIgnoreCase("Pending")

@@ -1,59 +1,90 @@
-public class Receptionist extends Employee{
-    Receptionist(String employeeName,int  employeeId, double employeeSalary){
-        super(employeeName,employeeId,employeeSalary,"Receptionist");
-    }
+import java.util.ArrayList;
 
-    Receptionist(String employeeName,int  employeeId){
-        super(employeeName,employeeId);
+public class Receptionist extends Employee {
+
+    private ArrayList<Guest> guestList = new ArrayList<>();
+
+    Receptionist(String employeeName, int employeeId, double employeeSalary) {
+        super(employeeName, employeeId, employeeSalary, "Receptionist");
     }
-    Receptionist(String employeeName){
-        super(employeeName);
-    }
-    Receptionist(){
-        setEmployeeRole("Receptionist");
-    }
+    Receptionist(String employeeName, int employeeId) { super(employeeName, employeeId); }
+    Receptionist(String employeeName) { super(employeeName); }
+    Receptionist() { setEmployeeRole("Receptionist"); }
+
     @Override
     public void Work() {
-        System.out.println("hello sir How can i help you");
+        System.out.println("Hello sir, how can I help you?");
     }
 
-    public void addGuest(){
-        Guest guestOne = new Guest();
-    }
-    public void addGuest(String guestName) {
+    public void addVipGuest(int guestID, String guestName, long phoneNumber, String butlerName)
+            throws GuestException {
         if (guestName == null || guestName.isBlank())
-            throw new IllegalArgumentException("Guest name cannot be empty.");
-        Guest guestOne = new Guest(guestName);
-    }
-    public void addGuest(String guestName,int guesrNid){
-        Guest guestOne = new Guest(guestName,guesrNid);
-
-    }
-    public void addGuest(String guestName,int guesrNid,String guestReview){
-        Guest guestOne = new Guest(guestName,guesrNid,guestReview);
-
-    }
-    public void addGuest(String guestName,int guesrNid,String guestReview,String guestCategory){
-        Guest guestOne = new Guest(guestName,guesrNid,guestReview,guestCategory);
-
+            throw new GuestException("Guest name cannot be empty.");
+        Guest guest = new Vip(guestID, guestName, phoneNumber, butlerName);
+        guestList.add(guest);
+        System.out.println("VIP Guest added: " + guestName);
     }
 
-    public void addGuest(String guestName,int guesrNid,String guestCategory,String guestReview,int guestInRoom){
-        Guest guestOne = new Guest(guestName,guesrNid,guestCategory,guestReview,guestInRoom);
+    public void addBusinessGuest(int guestID, String guestName, long phoneNumber, String companyName)
+            throws GuestException {
+        if (guestName == null || guestName.isBlank())
+            throw new GuestException("Guest name cannot be empty.");
+        Guest guest = new Business(guestID, guestName, phoneNumber, companyName);
+        guestList.add(guest);
+        System.out.println("Business Guest added: " + guestName);
     }
-    // push 1
-    public void Removeguest(Guest guest){
-        guest =null;
+
+    public void removeGuest(int guestID) throws GuestException {
+        Guest found = findGuest(guestID);
+        guestList.remove(found);
+        System.out.println("Guest removed: " + found.getGuestName());
     }
-    // push 1
-    public void SeeGuestDetails(Guest guest){
-        if (guest == null)
-            throw new IllegalArgumentException("Guest cannot be null.");
-        System.out.println("Guest Name : " + guest.getGuestName() + "\nGuest Nid : " +guest.getGuesrNid()+"\nGuest Review : " +"\nGuest Review : " + guest.getGuestReview()+ "\nGuest Category : "+ guest.getGuestCategory()+"\nGuest In Room No :" + guest.getGuestInRoom());
+
+    public void checkInGuest(int guestID, int roomNumber) throws GuestException {
+        Guest guest = findGuest(guestID);
+        guest.assignRoom(roomNumber);
+        guest.checkIn();
+        System.out.println(guest.getGuestName() + " checked into room " + roomNumber);
     }
+
+    public void checkOutGuest(int guestID) throws GuestException {
+        Guest guest = findGuest(guestID);
+        guest.checkOut();
+        System.out.println(guest.getGuestName() + " checked out.");
+    }
+
+    public void seeGuestDetails(int guestID) throws GuestException {
+        Guest guest = findGuest(guestID);
+        guest.showGuestInfo();
+    }
+
+    public void showAllGuests() {
+        if (guestList.isEmpty()) {
+            System.out.println("No guests registered.");
+            return;
+        }
+        for (Guest g : guestList) {
+            g.showGuestInfo();
+            System.out.println("----");
+        }
+    }
+
+    public ArrayList<Guest> getGuestList() {
+        return guestList;
+    }
+
+    private Guest findGuest(int guestID) throws GuestException {
+        for (Guest g : guestList)
+            if (g.getGuestID() == guestID) return g;
+        throw new GuestException("Guest with ID " + guestID + " not found.");
+    }
+
     @Override
-    public void ShowEmployeeDetails(){
-        System.out.println("Name : " + this.getEmployeeName() + "\nRole : " +getEmployeeRole()+ "\nId : " +getEmployeeId() +"\nSalary : "+getEmployeeSalary() );
+    public void ShowEmployeeDetails() {
+        System.out.println("Name   : " + getEmployeeName()
+                + "\nRole   : " + getEmployeeRole()
+                + "\nId     : " + getEmployeeId()
+                + "\nSalary : " + getEmployeeSalary());
         Work();
     }
 }
