@@ -1,42 +1,36 @@
 public abstract class Room {
-    private int RoomNumber;
-    private int Floor;
-    private double Price;
-    private boolean AvailableRoom;
-
-    public Room (int RoomNumber,int Floor,double Price,boolean AvailableRoom) {
-         this.RoomNumber = RoomNumber;
-         this.Floor = Floor;
-         this.Price = Price;
-         this.AvailableRoom = AvailableRoom;
+    private String roomNumber;
+    private int floorLevel;
+    private double costPerNight;
+    private boolean available;
+    public Room() {}
+    public Room(String roomNumber, int floorLevel, double costPerNight, boolean available) throws InvalidRoomException {
+        if (roomNumber == null || roomNumber.trim().isEmpty())
+            throw new InvalidRoomException("Room number cannot be empty.");
+        if (floorLevel < 0)
+            throw new InvalidRoomException("Floor level cannot be negative.");
+        if (costPerNight < 0)
+            throw new InvalidRoomException("Cost per night cannot be negative.");
+        this.roomNumber = roomNumber;
+        this.floorLevel = floorLevel;
+        this.costPerNight = costPerNight;
+        this.available = available;
     }
-    public int getRoomNumber() {
-        return RoomNumber;
-    }
-
-    public int getFloor() {
-        return Floor;
-    }
-    public double getPrice() {
-        return Price;
-    }
-    public boolean getAvailableRoom () {
-        return AvailableRoom;
-    }
-    public void setPrice(double Price) {
-        this.Price = Price;
-
-    }
-    public void setAvailableRoom (boolean AvailableRoom) {
-        this.AvailableRoom = AvailableRoom;
-    }
-
-    public abstract void roomType();
-
-    public void ShowRoomInformation() {
-        System.out.println("Room Number: " +RoomNumber);
-        System.out.println("Floor: " +Floor);
-        System.out.println("Price: " +Price);
-        System.out.println("AvailableRoom: "+AvailableRoom);
+    public String getRoomNumber() { return roomNumber; }
+    public int getFloorLevel() { return floorLevel; }
+    public double getCostPerNight() { return costPerNight; }
+    public boolean isAvailable() { return available; }
+    public void setAvailable(boolean available) { this.available = available; }
+    public abstract String getRoomType();
+    public abstract int getMaxOccupancy();
+    public void reserveRoom() { this.available = false; System.out.println("Room " + roomNumber + " reserved."); }
+    public void cancelReservation() { this.available = true; System.out.println("Room " + roomNumber + " reservation cancelled."); }
+    public void showRoomInformation() {
+        System.out.println("Room Number  : " + roomNumber);
+        System.out.println("Floor        : " + floorLevel);
+        System.out.println("Price/Night  : " + costPerNight);
+        System.out.println("Available    : " + available);
+        System.out.println("Room Type    : " + getRoomType());
+        System.out.println("Max Occupancy: " + getMaxOccupancy());
     }
 }
