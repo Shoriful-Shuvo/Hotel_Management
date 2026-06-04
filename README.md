@@ -10,6 +10,9 @@
 | Abdul Ahad            | 2024100000140 |
 | Rahidul Islam Patwary | 2024100000147 |
 
+UML Diagram:
+![UML Diagram](Diagram%20Png.png)
+
 For the project we decided to build a Hotel Management System using Java that helps in
 managing the daily operations of a hotel in an organized and efficient way.
 Instead of handling records manually this system stores and processes all information digitally, 
