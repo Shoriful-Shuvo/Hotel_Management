@@ -1,4 +1,15 @@
 <h1>Hotel Management System</h1>
+
+## Group Information
+
+| Student Name          | Student ID    |
+| --------------------- | ------------- |
+| Shoriful Islam        | 2024100000159 |
+| Istiak Ahamed         | 2024100000273 |
+| Rifatul Islam Shakib  | 2024100000124 |
+| Abdul Ahad            | 2024100000140 |
+| Rahidul Islam Patwary | 2024100000147 |
+
 For the project we decided to build a Hotel Management System using Java that helps in
 managing the daily operations of a hotel in an organized and efficient way.
 Instead of handling records manually this system stores and processes all information digitally, 
